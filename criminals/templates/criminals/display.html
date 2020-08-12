@@ -1,0 +1,23 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+<div class="row">
+
+  {% for criminal in criminals %}
+  <div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{% static 'images/u2.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ criminal.name }}</h5>
+        <p class="card-text">Location: {{ criminal.location }} </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+
+</div>
+
+{% endblock %}
