@@ -19,17 +19,18 @@
   {% if criminals %}
 
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
 
       {% for criminal in criminals %}
 
-      <div class="col-sm-4 p-0">
+      <div class="col-sm-4 d-flex gap p-0">
         <div class="card card-width mx-auto">
           <img class="card-img-top" src="{{ criminal.photo.url }}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Name: {{ criminal.name }}</h5>
-            <p class="card-text">Crime: {{ criminal.crime }} </p>
-            <p class="card-text">Location: {{ criminal.location }} </p>
+          
+          <div class="card-body flex-fill">
+            <h5 class="card-title">NAME: {{ criminal.name }}</h5>
+            <p class="card-text">CRIME: {{ criminal.crime }} </p>
+            <p class="card-text">LOCATION: {{ criminal.location }} </p>
             <a href="{% url 'criminals:details' criminal.criminal_id %}" class="btn btn-primary btn-fix">See Details</a>
           </div>
         </div>

@@ -11,7 +11,7 @@
    </div>
 </div>
 <div class="main">
-   <div class="col-md-6 col-sm-12">
+   <div class="col-md-5 col-sm-12">
       <div class="login-form">
          <form action="{% url 'accounts:login' %}" method="POST">
             {% csrf_token %}
@@ -30,7 +30,7 @@
                Your username and password didn't match. Please try again.
             {% endif %}
 
-            <button type="submit" class="btn btn-primary text-uppercase">Login</button>
+            <button type="submit" class="btn btn-primary gap text-uppercase">Login</button>
          </form>
    </div>
 </div>
