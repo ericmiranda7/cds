@@ -890,3 +890,14 @@ section#contact form#contactForm :-ms-input-placeholder {
   background-image: url('../images/7.jpg');
 }
 /*#endregion */
+
+/*#region criminal view card*/
+.btn-fix {
+  margin-bottom: 1rem;
+ 
+}
+
+.card-width {
+  width: 80% !important;
+  height: 100%;
+}
