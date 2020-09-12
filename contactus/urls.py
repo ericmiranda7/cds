@@ -16,11 +16,12 @@ Including another URLconf
 
 from django.urls import path
 from . import views
-from .views import ContactFormView
+from .views import ContactView
+from django.views.generic.base import TemplateView
 
 app_name = 'contactus'
 
 urlpatterns = [
-    path('', ContactFormView.as_view(), name='contact'),
-    path('success/', views.success, name='success')
+    path('', ContactView.as_view(), name='contact'),
+    path('success/', TemplateView.as_view(template_name='contact/success.html'))
 ]

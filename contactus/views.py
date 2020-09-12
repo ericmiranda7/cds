@@ -1,21 +1,16 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from .forms import ContactForm
 from django.urls import reverse
 from django.views import View
+from django.contrib import messages
+from django.views.generic import CreateView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.views.generic.base import TemplateView
+
 
 # Create your views here.
-class ContactFormView(View):
-    def get(self, request):
-        form = ContactForm()
-        return render(request, 'contactus/contact.html', {'contactForm': form})
-    
-    def post(self, request):
-        form = ContactForm(request.POST)
-        if (form.is_valid()):
-            new_message = form.save()
-            return redirect('contactus:success')
-        else:
-            return render(request, 'contactus/contact.html', {'contactForm': form})
-
-def success(request):
-    return render(request, 'contactus/success.html')
+class ContactView(SuccessMessageMixin, CreateView):
+    template_name = 'contactus/contact.html'
+    form_class = ContactForm
+    success_url = 'success/'
+    success_message = "Submitted, Thank You !"

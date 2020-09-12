@@ -16,9 +16,11 @@ Including another URLconf
 from django.urls import path, include
 from . import views
 from .views import UploadView
+from django.views.generic.base import TemplateView
 
 app_name = 'upload'
 
 urlpatterns = [
     path('', UploadView.as_view(), name='upload'),
+    path('success/', TemplateView.as_view(template_name='upload/success.html'))
 ]

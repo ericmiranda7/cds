@@ -17,25 +17,25 @@
             <div class="row align-items-stretch mb-5">
                 <div class="col-md-6">
                     <div class="form-group">
-                        {{ contactForm.name.errors }}
-                        {{ contactForm.name }}
+                        {{ form.name.errors }}
+                        {{ form.name }}
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="form-group">
-                        {{ contactForm.email.errors }}
-                        {{ contactForm.email }}
+                        {{ form.email.errors }}
+                        {{ form.email }}
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="form-group mb-md-0">
-                        {{ contactForm.phone.errors }}
-                        {{ contactForm.phone }}
+                        {{ form.phone.errors }}
+                        {{ form.phone }}
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group form-group-textarea mb-md-0">
-                        {{ contactForm.message.errors }}
-                        {{ contactForm.message }}
+                        {{ form.message.errors }}
+                        {{ form.message }}
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>

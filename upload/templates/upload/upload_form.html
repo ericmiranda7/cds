@@ -12,7 +12,7 @@
   <script src="/static/smart-selects/admin/js/chainedfk.js"></script>
   <script src="/static/smart-selects/admin/js/bindfields.js"></script>
 
-
+  
   <div class="container py-5 emp-profile">
     <div class="row">
       <div class="col-md-10 mx-auto">
@@ -20,54 +20,54 @@
         <form>
           <div class="form-group row">
             <div class="col-sm-6">
-              {{ uploadForm.name.errors }}
-              <label for="{{ uploadForm.name.id_for_label }}">First name</label>
-              {{ uploadForm.name }}
+              {{ form.name.errors }}
+              <label for="{{ form.name.id_for_label }}">First name</label>
+              {{ form.name }}
             </div>
             <div class="col-sm-6">
-              {{ uploadForm.physical_description.errors }}
-              <label for="{{ uploadForm.physical_description.id_for_label }}">Physical Description</label>
-              {{ uploadForm.physical_description }}
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-6">
-              {{ uploadForm.age.errors }}
-              <label for="{{ uploadForm.age.id_for_label }}">Age</label>
-              {{ uploadForm.age }}
-            </div>
-            <div class="col-sm-6">
-              {{ uploadForm.date.errors }}
-              <label for=" {{ uploadForm.date.id_for_label }} ">Crime committed on</label>
-              {{ uploadForm.date }}
+              {{ form.physical_description.errors }}
+              <label for="{{ form.physical_description.id_for_label }}">Physical Description</label>
+              {{ form.physical_description }}
             </div>
           </div>
           <div class="form-group row">
             <div class="col-sm-6">
-              {{ uploadForm.crime_type.errors }}
-              <label for=" {{ uploadForm.crime_type.id_for_label }}">Crime Type</label>
-              {{ uploadForm.crime_type }}
+              {{ form.age.errors }}
+              <label for="{{ form.age.id_for_label }}">Age</label>
+              {{ form.age }}
+            </div>
+            <div class="col-sm-6">
+              {{ form.date.errors }}
+              <label for=" {{ form.date.id_for_label }} ">Crime committed on</label>
+              {{ form.date }}
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              {{ form.crime_type.errors }}
+              <label for=" {{ form.crime_type.id_for_label }}">Crime Type</label>
+              {{ form.crime_type }}
             </div>
             <div class="col-sm-3">
-              {{ uploadForm.state.errors }}
-              <label for="{{ uploadForm.state.id_for_label }}">State</label>
-              {{ uploadForm.state }}
+              {{ form.state.errors }}
+              <label for="{{ form.state.id_for_label }}">State</label>
+              {{ form.state }}
             </div>
             <div class="col-sm-3">
               <label for="inputPostalCode">City</label>
-              {{ uploadForm.city }}
+              {{ form.city }}
             </div>
           </div>
           <div class="form-group row">
             <div class="col-sm-6">
-              {{ uploadForm.arresting_agency.errors }}
-              <label for="uploadForm.arresting_agency.id_for_label">Arresting Agency</label>
-              {{ uploadForm.arresting_agency }}
+              {{ form.arresting_agency.errors }}
+              <label for="form.arresting_agency.id_for_label">Arresting Agency</label>
+              {{ form.arresting_agency }}
             </div>
             <div class="col-sm-6">
-              {{ uploadForm.photo.errors }}
-              <label for="uploadForm.photo.id_for_label">Photo</label>
-              {{ uploadForm.photo }}
+              {{ form.photo.errors }}
+              <label for="form.photo.id_for_label">Photo</label>
+              {{ form.photo }}
             </div>
           </div>
           <button type="submit" class="btn btn-primary px-4 float-left">Save</button>
@@ -75,5 +75,6 @@
       </div>
     </div>
   </div>
+  
 
   {% endblock %}
