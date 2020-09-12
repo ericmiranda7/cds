@@ -601,12 +601,12 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
 }
 
-.profile-img img {
+ .profile-img img {
   width: 70%;
   height: 100%;
 }
 
-.profile-img .file {
+/* .profile-img .file {
   position: relative;
   overflow: hidden;
   margin-top: -20%;
@@ -622,14 +622,15 @@ section#contact form#contactForm :-ms-input-placeholder {
   opacity: 0;
   right: 0;
   top: 0;
-}
+} */
 
-.profile-head h5 {
+.profile-head h3 {
   color: #333;
+  margin-top: 1rem;
 }
 
-.profile-head h6 {
-  color: #0062cc;
+.profile-head h4 {
+  color: #818182;
 }
 
 .profile-edit-btn {
@@ -642,15 +643,11 @@ section#contact form#contactForm :-ms-input-placeholder {
   cursor: pointer;
 }
 
-.proile-rating {
-  font-size: 12px;
-  color: #818182;
-  margin-top: 5%;
-}
 
-.proile-rating span {
-  color: #495057;
-  font-size: 15px;
+
+.profile-rating span {
+  color: #818182;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -665,19 +662,20 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 .profile-head .nav-tabs .nav-link.active {
   border: none;
-  border-bottom: 2px solid #0062cc;
+  border-bottom: 2px solid #fed136;
 }
 
 .profile-work {
   padding: 14%;
-  margin-top: -15%;
+  margin-top: 10%;
+  
 }
 
 .profile-work p {
-  font-size: 12px;
-  color: #818182;
+  font-size: 18px;
+  color: #495057;
   font-weight: 600;
-  margin-top: 10%;
+  
 }
 
 .profile-work a {
@@ -697,7 +695,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 .profile-tab p {
   font-weight: 600;
-  color: #0062cc;
+  color: #818182;
 }
 
 /*#endregion*/
@@ -897,5 +895,16 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 .card-width {
   width: 80% !important;
-  
+}
+
+/*#endregion */
+
+/*#region criminal details */
+
+.tab-top-gap {
+  margin-top: 5rem;
+}
+
+.break{
+  border: 1px solid #fed136;
 }
