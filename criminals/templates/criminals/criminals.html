@@ -2,57 +2,61 @@
 
 {% block content %}
 
-<div class="container emp-profile">
+<div class="gap-between">
+  <div class="container emp-profile">
 
-<form action="{% url 'criminals:search' %}", method="GET">
+  <form action="{% url 'criminals:search' %}", method="GET">
 
-    {% csrf_token %}
+      {% csrf_token %}
 
-    {{ advancedSearch }}
+      Name:
+      <input type="text" class="form-control" name="name" placeholder="{{request.GET.name}}">
 
-    <input type="submit" value="Search">
+      <input type="submit" value="Search">
 
-</form>
+  </form>
 
-{% if criminals %}
-<div class="container">
-  <div class="row">
+  {% if criminals %}
 
-    {% for criminal in criminals %}
+  <div class="container">
+    <div class="row justify-content-center">
 
-    <div class="col-sm-4 p-0">
-      <div class="card w-50 mx-auto">
-        <img class="card-img-top" src="{{ criminal.photo.url }}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{ criminal.name }}</h5>
-          <p class="card-text">Crime: {{ criminal.crime }} </p>
-          <p class="card-text">Location: {{ criminal.location }} </p>
-          <a href="{% url 'criminals:details' criminal.criminal_id %}" class="btn btn-primary">See details</a>
+      {% for criminal in criminals %}
+
+      <div class="col-sm-4 d-flex gap p-0">
+        <div class="card card-width mx-auto">
+          <img class="card-img-top" src="{{ criminal.photo.url }}" alt="Card image cap">
+          
+          <div class="card-body flex-fill">
+            <h5 class="card-title">NAME: {{ criminal.name }}</h5>
+            <p class="card-text">CRIME: {{ criminal.crime }} </p>
+            <p class="card-text">LOCATION: {{ criminal.location }} </p>
+            <a href="{% url 'criminals:details' criminal.criminal_id %}" class="btn btn-primary btn-fix">See Details</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    {% endfor %}
+      {% endfor %}
+    </div>
+      <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+      </div>
+
   </div>
-
-    <div class="pagination">
-      <span class="step-links">
-          {% if criminals.has_previous %}
-              <a href="?page=1">&laquo; first</a>
-              <a href="?page={{ criminals.previous_page_number }}">previous</a>
-          {% endif %}
-
-          <span class="current">
-              Page {{ criminals.number }} of {{ criminals.paginator.num_pages }}.
-          </span>
-
-          {% if criminals.has_next %}
-              <a href="?page={{ criminals.next_page_number }}">next</a>
-              <a href="?page={{ criminals.paginator.num_pages }}">last &raquo;</a>
-          {% endif %}
-      </span>
-    </div>
-
 </div>
 
 {% else %}
