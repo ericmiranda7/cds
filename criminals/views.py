@@ -15,9 +15,7 @@ class CriminalsView(ListView):
 
     def get_queryset(self):
         name = self.kwargs.get('name', None)
-
         form = self.form_class(self.request.GET)
-
         if form.is_valid():
             return self.model.objects.filter(name__contains=form.cleaned_data['name'])
         return self.model.objects.all()
