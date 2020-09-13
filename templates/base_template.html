@@ -60,6 +60,10 @@
               <input class="logout text-uppercase" type="submit" value="Logout">
             </form>
           </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href=" {% url 'accounts:login' %} ">Login</a>
+          </li>
           {% endif %}
         </ul>
       </div>
