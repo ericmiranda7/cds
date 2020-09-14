@@ -698,6 +698,11 @@ section#contact form#contactForm :-ms-input-placeholder {
   color: #818182;
 }
 
+.loc {
+  padding: 0;
+  height: 6rem;
+}
+
 /*#endregion*/
 
 /*#region Slider Sign In */
