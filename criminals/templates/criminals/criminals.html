@@ -25,8 +25,9 @@
 
       <div class="col-sm-4 d-flex gap p-0">
         <div class="card card-width mx-auto">
-          <img class="card-img-top" src="{{ criminal.photo.url }}" alt="Card image cap">
-          
+          <div class="container criminalimg">
+          <img class="card-img-top cardimg" src="{{ criminal.photo.url }}" alt="Card image cap">
+          </div>
           <div class="card-body flex-fill">
             <h5 class="card-title">NAME: {{ criminal.name }}</h5>
             <p class="card-text">CRIME: {{ criminal.crime_type }} </p>

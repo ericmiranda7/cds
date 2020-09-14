@@ -34,3 +34,4 @@ class UploadCriminal(models.Model):
     crime_type = models.CharField(max_length=30)
     arresting_agency = models.CharField(max_length=30)
     photo = models.ImageField(upload_to='criminals/', blank=True, default='criminals/missing.jpeg')
+    status = models.TextField(blank=True, default='UNKNOWN')
