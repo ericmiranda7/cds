@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 # Add email field to django form
 class CustomUserCreationForm(UserCreationForm):
@@ -43,4 +43,12 @@ class CustomUserCreationForm(UserCreationForm):
             user.save()
         return user
 
+
+class CustomAuthForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # For all fields attrs
+        for field in iter(self.fields):
+            self.fields[field].widget.attrs.update({
+                'class': 'form-control'})
     

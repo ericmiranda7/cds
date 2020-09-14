@@ -1,17 +1,17 @@
 from django.shortcuts import render, redirect, reverse
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, logout
 from django.views import View
 from django.views.generic import CreateView
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, CustomAuthForm
 
 class LoginView(View):
     def get(self, request):
-        form = AuthenticationForm()
+        form = CustomAuthForm()
         return render(request, 'accounts/login.html', {'form': form})
 
     def post(self, request):
-        form = AuthenticationForm(data=request.POST)
+        form = CustomAuthForm(data=request.POST)
         if form.is_valid():
             user = form.get_user()
             login(request, user)
