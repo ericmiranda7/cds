@@ -700,85 +700,6 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 /*#endregion*/
 
-/*#region Slider Sign In */
-
-.signin {
-  position: absolute;
-  left: 43px;
-  margin-top: 22px;
-  padding: 10px;
-  color: #ffffff !important;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.1rem;
-  letter-spacing: 0.0625em;
-}
-
-/* Circle */
-
-.half-circle {
-  position: absolute;
-  right: 150px;
-  margin-top: 152px;
-  width: 200px;
-  height: 100px;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-  border: 5px solid white;
-  border-bottom: 0;
-  background-color: rgba(255, 255, 255, .4);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.inverted-half-circle {
-  position: absolute;
-  right: 150px;
-  margin-top: 252px;
-  width: 200px;
-  height: 100px;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
-  border: 5px solid white;
-  border-top: 0;
-  background-color: rgba(255, 255, 255, .4);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.signin:hover {
-  color: #fed136 !important;
-}
-
-.half-circle:hover {
-  background-color: rgba(255, 255, 255, .2);
-  color: #fed136 !important;
-}
-
-.inverted-half-circle:hover {
-  background-color: rgba(255, 255, 255, .2);
-  color: #fed136 !important;
-}
-
-.semicircle {
-  width: 200px;
-  margin-left: 0px;
-  margin: 0;
-}
-
-.logout {
-  border: none;
-  background: none;
-  color: rgba(255, 255, 255, .5);
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.95rem;
-  letter-spacing: 0.0625em;
-  padding: 8px 14px 8px 0px;
-}
-
-/*#endregion  Circle */
-
 /*#region Login */
 
 .main-head {
@@ -861,40 +782,86 @@ section#contact form#contactForm :-ms-input-placeholder {
 .sampleform {
   margin-top: 5rem;
 }
-/*#region uploadForm*/
-
-/*#endregion uploadForm */
 
 /*#region nav */
 @media (max-width: 768px) {
-
   body {
     margin-top: 51px;
   }
 }
+
+.logout {
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, .5);
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.95rem;
+  letter-spacing: 0.0625em;
+  padding: 8px 14px 8px 0px;
+}
 /*#endregion nav */
 
 /*#region imageslider*/
+
+
+
+.carousel-item {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+.carousel-item {
+  padding-top: 20rem;
+  padding-bottom: 12.5rem;
+  width: 100%;
+}
+}
+
+@media (min-width: 1400px) {
+  .carousel-item {
+    padding-top: 26rem;
+    padding-bottom: 22.5rem;
+    width: 100%;
+  }
+}
+
 .s1 {
   background-image: url('../images/5.jpg');
+  
 }
 
 .s2 {
   background-image: url('../images/1.jpg');
+  
 }
 
 .s3 {
   background-image: url('../images/7.jpg');
+  
 }
-/*#endregion */
 
 /*#region criminal view card*/
-.btn-fix {
-  margin-bottom: 1rem;
-}
 
 .card-width {
   width: 80% !important;
+}
+
+.loc {
+  padding: 0;
+  height: 8rem;
+}
+
+.criminalimg {
+  height: 17rem;
+  padding: 0;
+}
+
+.cardimg {
+  width: 100%;
+  height: 100%;
 }
 
 /*#endregion */
@@ -908,3 +875,5 @@ section#contact form#contactForm :-ms-input-placeholder {
 .break{
   border: 1px solid #fed136;
 }
+
+/*#endregion*/

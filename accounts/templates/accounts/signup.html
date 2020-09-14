@@ -6,17 +6,17 @@
 
 <div class="sidenav">
    <div class="login-main-text">
-      <h2>User<br> Registration Page</h2>
+      <h2>User<br> Registration Page</h2> <hr>
       <p>Register from here to access.</p>
    </div>
 </div>
-<div class="main">
+<div class="main container">
    <div class="col-md-6 col-sm-12">
       <div class="login-form">
          <form action="{% url 'accounts:signup' %}" method="post">
             {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Sign Up">
+            {{ form.as_p }}
+            <input type="submit" value="Sign Up" class="btn btn-primary gap text-uppercase">
          </form>
       </div>
    </div>

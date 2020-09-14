@@ -25,13 +25,16 @@
 
       <div class="col-sm-4 d-flex gap p-0">
         <div class="card card-width mx-auto">
-          <img class="card-img-top" src="{{ criminal.photo.url }}" alt="Card image cap">
-          
+          <div class="container criminalimg">
+          <img class="card-img-top cardimg" src="{{ criminal.photo.url }}" alt="Card image cap">
+          </div>
           <div class="card-body flex-fill">
             <h5 class="card-title">NAME: {{ criminal.name }}</h5>
-            <p class="card-text">CRIME: {{ criminal.crime }} </p>
-            <p class="card-text">LOCATION: {{ criminal.location }} </p>
-            <a href="{% url 'criminals:details' criminal.criminal_id %}" class="btn btn-primary btn-fix">See Details</a>
+            <p class="card-text">CRIME: {{ criminal.crime_type }} </p>
+            <div class="container loc">
+              <p class="card-text">LOCATION: {{ criminal.location }} </p>
+            </div>
+            <a href="{% url 'criminals:details' criminal.criminal_id %}" class="btn btn-primary btn-fix details">See Details</a>
           </div>
         </div>
       </div>
