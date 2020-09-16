@@ -20,6 +20,9 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.views.generic.base import TemplateView
 
+admin.site.site_header = "Kiroku Admin"
+admin.site.index_title = "Welcome to the Kiroku Admin Portal"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('chaining/', include('smart_selects.urls')),
