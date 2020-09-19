@@ -69,6 +69,16 @@
               <label for="form.photo.id_for_label">Photo</label>
               {{ form.photo }}
             </div>
+            <div class="col-sm-6">
+              {{ form.fir_no.errors }}
+              <label for="form.fir_no.id_for_label">FIR Number</label>
+              {{ form.fir_no }}
+            </div>
+            <div class="col-sm-6">
+              {{ form.fir.errors }}
+              <label for="form.fir.id_for_label">FIR Doc</label>
+              {{ form.fir }}
+            </div>
           </div>
           <button type="submit" class="btn btn-primary px-4 float-left">Save</button>
         </form>
