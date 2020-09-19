@@ -10,6 +10,23 @@ class Criminal(models.Model):
     age = models.IntegerField()
     physical_description = models.TextField(blank=True)
     date = models.DateField()
+    crime_type = models.CharField(max_length=30)
+    arresting_agency = models.CharField(max_length=30)
+    photo = models.ImageField(blank=True, upload_to='criminals/', default='criminals/missing.jpeg')
+    status = models.TextField(blank=True, default='UNKNOWN')
+
+    def __str__(self):
+        return self.name
+    
+    def location(self):
+        return self.city.name + ', ' + self.state.name
+
+    class Meta:
+        abstract = True
+    
+
+
+class VerifiedCriminal(Criminal):
     state = models.ForeignKey('upload.States', on_delete=models.CASCADE, default=11)
     city = ChainedForeignKey(
         Cities,
@@ -18,14 +35,4 @@ class Criminal(models.Model):
         show_all=False,
         auto_choose=True,
         sort=True)
-    crime_type = models.CharField(max_length=30)
-    arresting_agency = models.CharField(max_length=30)
-    photo = models.ImageField(blank=True, upload_to='criminals/', default='criminals/missing.jpeg')
     rating = models.FloatField(default=0)
-    status = models.TextField(blank=True, default='UNKNOWN')
-
-    def __str__(self):
-        return self.name
-    
-    def location(self):
-        return self.city.name + ', ' + self.state.name

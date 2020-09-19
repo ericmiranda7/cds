@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from .models import Criminal
+from .models import VerifiedCriminal
 from .forms import AdvancedSearch
 from django.views import View
 from django.views.generic import DetailView, ListView
@@ -8,7 +8,7 @@ from django.views.generic import DetailView, ListView
 class CriminalsView(ListView):
     template_name = 'criminals/criminals.html'
     form_class = AdvancedSearch
-    model = Criminal
+    model = VerifiedCriminal
     paginate_by = 6
     context_object_name = 'criminals'
     
@@ -26,5 +26,5 @@ class CriminalsView(ListView):
         return context
 
 class CriminalDetailView(DetailView):
-    model = Criminal
+    model = VerifiedCriminal
     template_name = 'criminals/criminal_detail.html'
