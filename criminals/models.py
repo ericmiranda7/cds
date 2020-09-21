@@ -1,8 +1,23 @@
 from django.db import models
-from smart_selects.db_fields import ChainedForeignKey
+from smart_selects.db_fields import ChainedForeignKey, GroupedForeignKey
 from upload.models import States, Cities
 
 # Create your models here.
+
+class CrimeCategory(models.Model):
+    category = models.CharField(max_length=12)
+
+    def __str__(self):
+        return self.category
+
+class CrimeType(models.Model):
+    crime_type = models.CharField(max_length=16)
+    category = models.ForeignKey('CrimeCategory', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.crime_type
+
+
 
 class Criminal(models.Model):
     criminal_id = models.AutoField(primary_key=True)
@@ -10,7 +25,7 @@ class Criminal(models.Model):
     age = models.IntegerField()
     physical_description = models.TextField(blank=True)
     date = models.DateField()
-    crime_type = models.CharField(max_length=30)
+    crime_type = GroupedForeignKey(CrimeType, "category")
     arresting_agency = models.CharField(max_length=30)
     photo = models.ImageField(blank=True, upload_to='criminals/', default='criminals/missing.jpeg')
     status = models.TextField(blank=True, default='UNKNOWN')
@@ -20,10 +35,9 @@ class Criminal(models.Model):
     
     def location(self):
         return self.city.name + ', ' + self.state.name
-
+    
     class Meta:
         abstract = True
-    
 
 
 class VerifiedCriminal(Criminal):
@@ -36,3 +50,5 @@ class VerifiedCriminal(Criminal):
         auto_choose=True,
         sort=True)
     rating = models.FloatField(default=0)
+
+

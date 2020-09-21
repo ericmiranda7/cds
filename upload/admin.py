@@ -7,7 +7,7 @@ from .models import UploadCriminal
 def verify_upload(modeladmin, request, queryset):
     for criminal in queryset:
         with connection.cursor() as cursor:
-            cursor.execute("INSERT INTO %s (name, age, physical_description, date, state_id, city_id, crime_type, arresting_agency, photo, rating, status) SELECT name, age, physical_description, date, state_id, city_id, crime_type, arresting_agency, photo, '0', status FROM %s WHERE criminal_id = %s" % ("criminals_verifiedcriminal", "upload_uploadCriminal", int(criminal.criminal_id)))
+            cursor.execute("INSERT INTO %s (name, age, physical_description, date, state_id, city_id, crime_type_id, arresting_agency, photo, rating, status) SELECT name, age, physical_description, date, state_id, city_id, crime_type_id, arresting_agency, photo, '0', status FROM %s WHERE criminal_id = %s" % ("criminals_verifiedcriminal", "upload_uploadCriminal", int(criminal.criminal_id)))
 
 verify_upload.short_description = "Add to criminal DB"
 
