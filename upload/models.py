@@ -28,3 +28,4 @@ class UploadCriminal(Criminal):
         show_all=False,
         auto_choose=True,
         sort=True)
+
