@@ -11,7 +11,7 @@ class CriminalsView(ListView):
     model = Criminal
     paginate_by = 6
     context_object_name = 'criminals'
-    
+
 
     def get_queryset(self):
         name = self.kwargs.get('name', None)
