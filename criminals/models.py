@@ -29,6 +29,8 @@ class Criminal(models.Model):
     arresting_agency = models.CharField(max_length=30)
     photo = models.ImageField(blank=True, upload_to='criminals/', default='criminals/missing.jpeg')
     status = models.TextField(blank=True, default='UNKNOWN')
+    fir_photo = models.FileField(upload_to='fir/')
+    fir_no = models.IntegerField()
 
     def __str__(self):
         return self.name
