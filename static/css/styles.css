@@ -822,6 +822,14 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 @media (min-width: 1400px) {
   .carousel-item {
+    padding-top: 20rem;
+    padding-bottom: 12.5rem;
+    width: 100%;
+  }
+  }
+
+@media (min-width: 1800px) {
+  .carousel-item {
     padding-top: 26rem;
     padding-bottom: 22.5rem;
     width: 100%;
