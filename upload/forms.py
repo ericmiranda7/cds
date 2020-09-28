@@ -1,5 +1,6 @@
 from django import forms
 from .models import UploadCriminal, States, Cities
+from django.shortcuts import redirect
 
 
 class UploadCriminalForm(forms.ModelForm):
@@ -7,6 +8,15 @@ class UploadCriminalForm(forms.ModelForm):
         super(UploadCriminalForm, self).__init__(*args, **kwargs)
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control'
+
+    def clean(self):
+        try:
+            criminal = UploadCriminal.objects.get(fir_no=self.cleaned_data['fir_no'])
+            criminal.name
+        except UploadCriminal.DoesNotExist:
+            pass
+
+        return self.cleaned_data
 
     class Meta:
         model = UploadCriminal
@@ -20,5 +30,5 @@ class UploadCriminalForm(forms.ModelForm):
             'date': forms.DateInput(attrs={'type': 'date', }),
             'crime_type': forms.Select(attrs={'placeholder': 'Type of Crime', }),
             'arresting_agency': forms.TextInput(attrs={'placeholder': 'Arresting Agency', }),
-            'fir_no': forms.TextInput(attrs={'placeholder': "Enter FIR Number",}),
+            'fir_no': forms.TextInput(attrs={'placeholder': "Enter FIR Number", }),
         }
