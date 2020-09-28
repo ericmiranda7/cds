@@ -28,3 +28,4 @@ class CriminalsView(ListView):
 class CriminalDetailView(DetailView):
     model = VerifiedCriminal
     template_name = 'criminals/criminal_detail.html'
+    context_object_name = 'criminal'
