@@ -28,7 +28,6 @@ class UploadCriminalForm(forms.ModelForm):
             'age': forms.TextInput(attrs={'placeholder': "Enter Criminal's age", }),
             'physical_description': forms.TextInput(attrs={'placeholder': 'Enter physical description of criminal', 'type': 'textarea', }),
             'date': forms.DateInput(attrs={'type': 'date', }),
-            'crime_type': forms.Select(attrs={'placeholder': 'Type of Crime', }),
             'arresting_agency': forms.TextInput(attrs={'placeholder': 'Arresting Agency', }),
             'fir_no': forms.TextInput(attrs={'placeholder': "Enter FIR Number", }),
         }
