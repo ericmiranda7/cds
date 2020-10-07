@@ -4,6 +4,7 @@ from .models import VerifiedCriminal
 from .forms import AdvancedSearch
 from django.views import View
 from django.views.generic import DetailView, ListView
+from upload.models import States, Cities
 
 
 class CriminalsView(ListView):
@@ -25,6 +26,8 @@ class CriminalsView(ListView):
     def get_context_data(self, **kwargs):
         context = super(CriminalsView, self).get_context_data(**kwargs)
         context['advancedSearch'] = AdvancedSearch()
+        context['states'] = States.objects.all()
+        context['cities'] = Cities.objects.all()
         return context
 
 
