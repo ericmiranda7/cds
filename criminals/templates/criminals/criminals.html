@@ -8,23 +8,21 @@
     <form action="{% url 'criminals:search' %}" , method="GET">
 
       {% csrf_token %}
-
-      Name:
-      <input type="text" class="form-control" name="name" placeholder="{{request.GET.name}}">
-      <input type="text" class="form-control" name="state" placeholder="{{ request.GET.state }}">
-      <input type="text" class="form-control" name="city" placeholder="{{ request.GET.city }}">
-      <input list="states" name="state" class="state" /></label>
+      <input type="text" class="form-control" name="name" placeholder="Search by name" value="{{ request.GET.name }}">
+      <input list="states" name="state" class="state" placeholder="Search by state" value="{{ request.GET.state }}">
       <datalist id="states">
         {% for state in states %}
-        <option value="{{ state.id }}">{{ state.name }}</option>
+        <option value="{{ state }}">{{ state.name }}</option>
         {% endfor %}
       </datalist>
-       <input list="cities" name="city"/></label>
+
+      <input list="cities" name="city" placeholder="Search by city" value="{{ request.GET.city }}">
       <datalist id="cities" class="city">
         {% for city in cities %}
-        <option value="{{ city.state_id }}" disabled>{{ city.name }}</option>
+        <option value="{{ city }}" disabled>{{ city.name }}</option>
         {% endfor %}
       </datalist>
+
       <input type="submit" value="Search">
 
     </form>

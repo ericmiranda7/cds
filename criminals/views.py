@@ -18,6 +18,7 @@ class CriminalsView(ListView):
         name = self.kwargs.get('name', None)
         form = self.form_class(self.request.GET)
         if form.is_valid():
+            print(form.cleaned_data['state'])
             return self.model.objects.filter(name__contains=form.cleaned_data['name']) \
                 .filter(state__name__contains=form.cleaned_data['state']) \
                 .filter(city__name__contains=form.cleaned_data['city'])
