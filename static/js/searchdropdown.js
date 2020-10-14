@@ -1,4 +1,4 @@
-// DROPDOWN JS
+/* // DROPDOWN JS
 stateSearch = document.querySelector('.state');
 stateSearch.addEventListener('focusout', removeCities)
 
@@ -12,4 +12,10 @@ function removeCities() {
         }
     }
     console.log(citySearch)
+} */
+
+document.onload(initName);
+
+function initName() {
+    
 }

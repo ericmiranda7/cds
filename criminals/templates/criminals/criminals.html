@@ -1,28 +1,25 @@
 {% extends 'base_template.html' %}
+{% load clever_selects_extras %}
 
 {% block content %}
 
 <div class="gap-between">
   <div class="container emp-profile">
-
     <form action="{% url 'criminals:search' %}" , method="GET">
 
       {% csrf_token %}
       <input type="text" class="form-control" name="name" placeholder="Search by name" value="{{ request.GET.name }}">
-      <input list="states" name="state" class="state" placeholder="Search by state" value="{{ request.GET.state }}">
-      <datalist id="states">
-        {% for state in states %}
-        <option value="{{ state }}">{{ state.name }}</option>
+
+      {{ advancedSearch.state }}
+
+      {{ advancedSearch.city }}
+
+      <input list="crimes" name="crime" class="form-control">
+      <datalist id="crimes">
+        {% for crime in crimes %}
+          <option value={{ crime.id }}> {{ crime.crime_type }} </option>
         {% endfor %}
       </datalist>
-
-      <input list="cities" name="city" placeholder="Search by city" value="{{ request.GET.city }}">
-      <datalist id="cities" class="city">
-        {% for city in cities %}
-        <option value="{{ city }}" disabled>{{ city.name }}</option>
-        {% endfor %}
-      </datalist>
-
       <input type="submit" value="Search">
 
     </form>
@@ -83,4 +80,6 @@
   {% endif %}
 
 </div>
+<script src={% static 'js/searchdropdown.js' %}></script>
+{% clever_selects_js_import %}
 {% endblock %}
