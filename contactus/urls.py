@@ -23,5 +23,5 @@ app_name = 'contactus'
 
 urlpatterns = [
     path('', ContactView.as_view(), name='contact'),
-    path('success/', TemplateView.as_view(template_name='contact/success.html'))
+    path('success/', TemplateView.as_view(template_name='contactus/success.html'))
 ]
