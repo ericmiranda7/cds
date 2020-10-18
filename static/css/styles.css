@@ -851,6 +851,8 @@ section#contact form#contactForm :-ms-input-placeholder {
   
 }
 
+/*#endregion imageslider*/
+
 /*#region criminal view card*/
 
 .card-width {
@@ -891,3 +893,15 @@ section#contact form#contactForm :-ms-input-placeholder {
   border: none;
 }
 /*#endregion*/
+
+/*#region about*/
+
+#team {
+  background-color: white;
+}
+
+/*#endregion about*/
+
+.twosent {
+  height: 4em;
+}

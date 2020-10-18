@@ -1,73 +1,85 @@
 {% extends 'base_template.html' %}
+{% load clever_selects_extras %}
 
 {% block content %}
 
 <div class="gap-between">
   <div class="container emp-profile">
-
-  <form action="{% url 'criminals:search' %}", method="GET">
+    <form action="{% url 'criminals:search' %}" , method="GET">
 
       {% csrf_token %}
+      <input type="text" class="form-control" name="name" placeholder="Search by name" value="{{ request.GET.name }}">
 
-      Name:
-      <input type="text" class="form-control" name="name" placeholder="{{request.GET.name}}">
-      <input type="text" class="form-control" name="state" placeholder="{{ request.GET.state }}">
-      <input type="text" class="form-control" name="city" placeholder="{{ request.GET.city }}">
+      {{ advancedSearch.state }}
 
+      {{ advancedSearch.city }}
+
+      <input list="crimes" name="crime" class="form-control">
+      <datalist id="crimes">
+        {% for crime in crimes %}
+          <option value={{ crime.id }}> {{ crime.crime_type }} </option>
+        {% endfor %}
+      </datalist>
       <input type="submit" value="Search">
 
-  </form>
+    </form>
 
-  {% if criminals %}
+    {% if criminals %}
 
-  <div class="container">
-    <div class="row justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
 
-      {% for criminal in criminals %}
+        {% for criminal in criminals %}
 
-      <div class="col-sm-4 d-flex gap p-0">
-        <div class="card card-width mx-auto">
-          <div class="container criminalimg">
-          <img class="card-img-top cardimg" src="{{ criminal.photo.url }}" alt="Card image cap">
-          </div>
-          <div class="card-body flex-fill">
-            <h5 class="card-title">NAME: {{ criminal.name }}</h5>
-            <p class="card-text">CRIME: {{ criminal.crime_type }} </p>
-            <div class="container loc">
-              <p class="card-text">LOCATION: {{ criminal.location }} </p>
+        <div class="col-sm-4 d-flex gap p-0">
+          <div class="card card-width mx-auto">
+            <div class="criminalimg">
+              <img class="card-img-top cardimg" src="{{ criminal.photo.url }}" alt="Card image cap">
             </div>
-            <a href="{% url 'criminals:details' criminal.criminal_id %}" class="btn btn-primary btn-fix details">See Details</a>
+            <div class="card-body flex-fill">
+              <div class="twosent">
+                <h5 class="card-title">NAME: {{ criminal.name }}</h5>
+              </div>
+              <div class="twosent">
+                <p class="card-text">CRIME: {{ criminal.crime_type }} </p>
+              </div>
+              <div class="container loc twosent">
+                <p class="card-text">LOCATION: {{ criminal.location }} </p>
+              </div>
+              <a href="{% url 'criminals:details' criminal.criminal_id %}" class="btn btn-primary btn-fix details">See
+                Details</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      {% endfor %}
-    </div>
+        {% endfor %}
+      </div>
       <div class="pagination">
         <span class="step-links">
-            {% if page_obj.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
+          {% if page_obj.has_previous %}
+          <a href="?page=1">&laquo; first</a>
+          <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+          {% endif %}
 
-            <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-            </span>
+          <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+          </span>
 
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-            {% endif %}
+          {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}">next</a>
+          <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
         </span>
       </div>
 
+    </div>
   </div>
+
+  {% else %}
+  not found
+  {% endif %}
+
 </div>
-
-{% else %}
-not found
-{% endif %}
-
-</div>
-
+<script src={% static 'js/searchdropdown.js' %}></script>
+{% clever_selects_js_import %}
 {% endblock %}
