@@ -17,12 +17,9 @@ class Cities(models.Model):
     def __str__(self):
         return self.name
 
+from criminals.models import Criminal
 
-class UploadCriminal(models.Model):
-    name = models.CharField(max_length=30)
-    age = models.IntegerField()
-    physical_description = models.TextField(blank=True)
-    date = models.DateField()
+class UploadCriminal(Criminal):
     state = models.ForeignKey('States', on_delete=models.CASCADE, default=11)
     city = ChainedForeignKey(
         Cities,
@@ -31,6 +28,3 @@ class UploadCriminal(models.Model):
         show_all=False,
         auto_choose=True,
         sort=True)
-    crime_type = models.CharField(max_length=30)
-    arresting_agency = models.CharField(max_length=30)
-    photo = models.ImageField(upload_to='criminals/', blank=True, default='criminals/missing.jpeg')

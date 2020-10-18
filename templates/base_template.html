@@ -34,14 +34,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
+        {% if not user.is_staff %}
           <li class="nav-item">
             <a class="nav-link  {% if request.resolver_match.url_name == 'upload'%} active {% endif %}"
               href=" {% url 'upload:upload' %} ">Upload</a>
           </li>
+        {% endif %}
+        {% if not user.is_staff %}
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger {% if request.resolver_match.url_name == 'contact'%} active {% endif %}"
               href="{% url 'contactus:contact'%}">Contact Us</a>
           </li>
+        {% endif %}
           <li class="nav-item">
             <a class="nav-link {% if request.resolver_match.url_name == 'criminals' %} active {% endif %}"
               href=" {% url 'criminals:criminals'%} ">Criminals</a>
@@ -70,7 +74,9 @@
     </div>
   </nav>
 
+  <main>
   {% block content %} {% endblock %}
+  <main>
 
   <!-- Bootstrap JS-->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

@@ -21,7 +21,7 @@
           <div class="form-group row">
             <div class="col-sm-6">
               {{ form.name.errors }}
-              <label for="{{ form.name.id_for_label }}">First name</label>
+              <label for="{{ form.name.id_for_label }}">Name</label>
               {{ form.name }}
             </div>
             <div class="col-sm-6">
@@ -69,8 +69,18 @@
               <label for="form.photo.id_for_label">Photo</label>
               {{ form.photo }}
             </div>
+            <div class="col-sm-6">
+              {{ form.fir_no.errors }}
+              <label for="form.fir_no.id_for_label">FIR Number</label>
+              {{ form.fir_no }}
+            </div>
+            <div class="col-sm-6">
+              {{ form.fir.errors }}
+              <label for="form.fir.id_for_label">FIR Doc</label>
+              {{ form.fir_photo }}
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary px-4 float-left">Save</button>
+          <button type="submit" class="btn btn-primary px-4 float-left">Submit</button>
         </form>
       </div>
     </div>

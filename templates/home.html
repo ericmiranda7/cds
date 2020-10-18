@@ -21,23 +21,27 @@
       <!-- Slide One - Set the background image for this slide in the line below -->
       <div class="carousel-item active s1">
         <div class="carousel-caption d-none d-md-block">
-          <!--<h3>First Slide</h3>
-          <p>This is a description for the first slide.</p>-->
+          <h3>Legitimate & Righteous</h3>
+         <p>Providing legalized and law-abiding records.</p>
         </div>
+
+         <!--{% include 'auth.html' %}-->
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
       <div class="carousel-item s2">
         <div class="carousel-caption d-none d-md-block">
-          <!--<h3>Second Slide</h3>
-          <p>This is a description for the second slide.</p>-->
+          <h3>Equity & Justice</h3>
+          <p>Keeping up the authenticity and fairness.</p>
         </div>
+        <!--{% include 'auth.html' %}-->
       </div>
       <!-- Slide Three - Set the background image for this slide in the line below -->
       <div class="carousel-item s3">
         <div class="carousel-caption d-none d-md-block">
-          <!--<h3>Third Slide</h3>
-          <p>This is a description for the third slide.</p>-->
+          <h3>Quick-witted & Earnest</h3>
+          <p>Ensuring fast action and responsibility.</p>
         </div>
+        <!--{% include 'auth.html' %}-->
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -57,10 +61,10 @@
   <div class="container">
     <div class="text-center">
       <h2 class="section-heading text-uppercase">Services</h2>
-      <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+      <!--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
     </div>
     <div class="row text-center">
-      <div class="col-md-4">
+      <div class="col-lg-4">
         <span class="fa-stack fa-4x">
           <i class="fas fa-circle fa-stack-2x text-primary"></i>
           <!-- <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
@@ -69,42 +73,70 @@
         </span>
         <h4 class="my-3">Public Database</h4>
         <p class="text-muted">Our database is open to the public. Users can view and access the information about
-          criminals without paying a single penny!</p>
+          criminals free of charge.</p>
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4">
         <span class="fa-stack fa-4x">
           <i class="fas fa-circle fa-stack-2x text-primary"></i>
 
           <i class="fas fa-file-invoice fa-stack-1x fa-inverse"></i>
         </span>
         <h4 class="my-3">User Forms</h4>
-        <p class="text-muted">Users can upload forms containing details about the criminals which will be validated with
-          the cops database and updated in Kiroku.</p>
+        <!--<p class="text-muted">Users can upload forms containing details about the criminals which will be validated with
+          the police database and updated in Kiroku.</p>-->
+        <p class="text-muted">Kiroku updates criminal details shared by the public using the upload forms, after validating
+          with police database.</p>
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-4">
         <span class="fa-stack fa-4x">
           <i class="fas fa-circle fa-stack-2x text-primary"></i>
-          <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+          <i class="fas fa-comment-dots fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="my-3">Web Security</h4>
-        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto
-          quo inventore harum ex magni, dicta impedit.</p>
+        <h4 class="my-3">Suggestions & Feedback</h4>
+        <p class="text-muted">Users uploading information relating to criminal(s) and visitors dropping suggestions and 
+        feedback remain anonymous.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!--About-->
+<section class="page-section bg-light" id="about">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">About</h2>
+      <!--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
+    </div>
+    <div class="row text-center">
+      <div class="col">
+        <p class="text-muted">Kiroku is a Criminal Database which seeks to provide service to families, individuals and 
+        information seekers for the purpose of safety or investigation. Our customers are the public and our collaborators 
+        include government agencies such as the IndianKanoon, the National Registry of Sexual Offenders and Local Police 
+        Forces who provide us with database access  obtained with the required permissions in order to ensure accuracy and 
+        crosschecking of legitimate information. Information relating to the convict, i.e., name, age, physical description, 
+        crime type, date of crime, location, arresting agency, rating, status are provided. A search facility is provided 
+        to the end users to search by name of convict, location and crime type. The information on such convicts are 
+        crowdsourced via forms which can be submitted by the general public with a copy of the FIR issued against the 
+        convict as proof, but the same would be made available on the website only after cross-checking with an official 
+        police database. A method to contact the admins and provide feedback and corrections is also provided in order to 
+        ensure no defamation or incorrect or inappropriate details have been posted.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- Team-->
-<section class="page-section bg-light" id="team">
+<section class="page-section" id="team">
   <div class="container">
     <div class="text-center">
       <h2 class="section-heading text-uppercase">The Team</h2>
-      <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+      <!--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
     </div>
     <div class="row">
       <div class="col-lg-4">
         <div class="team-member">
-          <img class="mx-auto rounded-circle" src="{% static 'images/u3.jpg' %}" alt="" />
+          <img class="mx-auto rounded-circle" src="{% static 'images/eric.jpeg' %}" alt="" />
           <h4>Eric Miranda</h4>
           <p class="text-muted">Developer</p>
           <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
@@ -114,7 +146,7 @@
       </div>
       <div class="col-lg-4">
         <div class="team-member">
-          <img class="mx-auto rounded-circle" src="{% static 'images/u3.jpg' %}" alt="" />
+          <img class="mx-auto rounded-circle" src="{% static 'images/sachin.jpeg' %}" alt="" />
           <h4>Sachin Mundassery</h4>
           <p class="text-muted">Marketer</p>
           <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
@@ -124,7 +156,7 @@
       </div>
       <div class="col-lg-4">
         <div class="team-member">
-          <img class="mx-auto rounded-circle" src="{% static 'images/u3.jpg' %}" alt="" />
+          <img class="mx-auto rounded-circle" src="{% static 'images/mareea.png' %}" alt="" />
           <h4>Mareea Mehbin</h4>
           <p class="text-muted">Designer</p>
           <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
