@@ -6,6 +6,10 @@ django-crispy-forms==1.9.2
 django-smart-selects==1.5.9
 gunicorn==20.0.4
 Pillow==7.2.0
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8204ed93f5e0a5d031ed45c4a96854fd8684b84a
 pycodestyle==2.6.0
 pytz==2020.1
 six==1.15.0

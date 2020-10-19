@@ -14,7 +14,7 @@
 
       {{ advancedSearch.city }}
 
-      <input list="crimes" name="crime" class="form-control">
+      <input list="crimes" name="crime" class="form-control" placeholder="Search by crime">
       <datalist id="crimes">
         {% for crime in crimes %}
           <option value={{ crime.id }}> {{ crime.crime_type }} </option>
